@@ -3,11 +3,11 @@
 ## Task
 Explore the code in files `src/helpers/state.js` and `src/helpers/list.js`. Make sure you understand what each of the functions is doing and how it is supposed to work. Create a test suite for all of them. Here are a few points that you might want to consider:
 
-- Instead of initializing the list in every test, you can use `beforeEach`.
+- Instead of initializing the list in every test, you can use `beforeEach`. It’s also a good practice to clean up after the test is run. For this, use `afterEach` and the function `destroy`.
 
-- You can also create a set of tests where `add` and `addAsync` are tested on an already non-empty list. For this, use `describe` for grouping tests, `beforeEach` for populating with initial data, and `afterEach` for cleaning up.
+- You can also create a set of tests where `add` and `addAsync` are tested on an already non-empty list. For this, use `describe` for grouping tests and `beforeEach` for populating with initial data (don’t forget to clean up with `afterEach` as well).
 
-- Using mocking, verify that `setState` and `getState` are being called from the functions defined in `list.js` a reasonable number of times. For instance, there is no need for `initialize` to call `getState` or for `addItem` to call `setState` more than once.
+- Using mocking, verify that `setState` and `getState` are being called from the functions defined in `list.js` a reasonable number of times. For instance, there is no need for `initialize` to call `getState` or for `addItem` to call `setState` more than once. You may find the [`spyOn`](https://jestjs.io/docs/en/jest-object#jestspyonobject-methodname) method useful.
 
 - Don’t forget to test immutability.
 

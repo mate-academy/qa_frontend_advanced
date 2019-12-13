@@ -11,3 +11,7 @@ export function addItem(item) {
 export async function addItemAsync(item) {
   setState(await [...getState(), item]);
 }
+
+export function destroy() {
+  setState(null);
+}
